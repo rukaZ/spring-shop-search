@@ -40,4 +40,18 @@ public class ItemController {
         model.addAttribute("item", itemRepository.getOne(id));
         return "detail";
     }
+    @GetMapping("edit/{id:[0-9]+}")
+    public String reGetForm(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("item", itemRepository.getOne(id));
+        return "edit";
+    }
+    @PostMapping("/edit")
+    public String reRegisterItem(Item item) {
+        return "edit";
+    }
+    @PostMapping("edit/{id:[0-9]+}")
+    public String editItem(Item item) {
+        itemRepository.save(item);
+        return "redirect:/items";
+    }
 }

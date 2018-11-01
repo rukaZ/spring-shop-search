@@ -40,6 +40,9 @@
                                 <a th:href="@{/items/{id}(id=*{id})}">
                                     <button class="btn btn-sm btn-outline-primary">詳細</button>
                                 </a>
+                                <a th:href="@{/items/edit/{id}(id=*{id})}">
+                                    <button class="btn btn-sm btn-outline-primary">編集</button>
+                                </a>
                             </div>
                         </div>
                         <h6 class="card-subtitle">[[*{price}]] Yen</h6>
